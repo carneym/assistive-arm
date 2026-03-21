@@ -1,0 +1,32 @@
+# SO-101 Assistive Arm — Voice Pipeline Dependencies
+# Install: pip install -r requirements.txt
+
+# --- Core Audio ---
+numpy>=1.24
+sounddevice>=0.4.6
+
+# --- Speech-to-Text (choose one) ---
+# Option A: OpenAI Whisper (easiest install, uses PyTorch)
+openai-whisper>=20231117
+
+# Option B: whisper.cpp Python bindings (faster on Jetson with CUDA)
+# Install with: WHISPER_CUBLAS=1 pip install whisper-cpp-python
+# whisper-cpp-python>=0.3.0
+
+# --- Wake Word Detection ---
+# Porcupine (free tier, needs API key from https://console.picovoice.ai/)
+pvporcupine>=3.0
+
+# --- Voice Activity Detection ---
+# Silero VAD (lightweight, runs on CPU)
+torch>=2.0  # Required by Silero VAD and Whisper
+torchaudio>=2.0
+
+# --- Text-to-Speech ---
+# Option A: Piper TTS (local, fast, natural — recommended for Jetson)
+# pip install piper-tts
+# Option B: Fallback
+pyttsx3>=2.90
+
+# --- Utilities ---
+webrtcvad>=2.0.10  # Simple VAD alternative
