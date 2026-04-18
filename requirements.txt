@@ -28,5 +28,8 @@ torchaudio>=2.0
 # Option B: Fallback
 pyttsx3>=2.90
 
+# --- Arm Control ---
+pyserial>=3.5  # Serial communication with Feetech STS3215 servos
+
 # --- Utilities ---
 webrtcvad>=2.0.10  # Simple VAD alternative
